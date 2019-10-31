@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { aboutusDesktop, img } from './style/AboutUs';
+import Icon from './Icon';
 
 class About extends Component {
     render() {
         return (
             <div className="about-us">
-                <h2 style={aboutusDesktop}>About Us</h2>
+                <div className='mobile-home'>
+                    <Icon/>
+                    <h2 style={aboutusDesktop}>About Us</h2>
+                </div>
                 <img style={img} src={img.img} alt='Team work'/>
                 <p>Your About Us page should be:
                     Informative. It doesn’t always have to tell the whole story, but it should at least provide people with an idea of who and what you are.

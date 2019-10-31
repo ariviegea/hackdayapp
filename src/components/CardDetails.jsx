@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import { list } from './style/Card';
 import { available, notavailable } from './style/CardDetails';
 
+const bookButton = {
+    border:'1px solid black',
+    backgroundColor: 'transparent',
+    padding:'5px 10px',
+    marginBottom: '5px',
+    marginLeft: '5px'
+}
 class CardDetails extends Component {
     constructor(props) {
         super(props);
@@ -44,7 +51,7 @@ class CardDetails extends Component {
                     <li><p>{description}</p></li>
                     <li>{this.state.apartments.available === true ? <b style={available}>{'Available'}</b> : <b style={notavailable}>{'Not available'}</b>}</li>
                 </ul>
-                <button onClick={this.bookAppartment}>Book</button>
+                <button style={bookButton}onClick={this.bookAppartment}>Book</button>
             </div>
         );
     }

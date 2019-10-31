@@ -37,7 +37,7 @@ class Apartments extends Component {
             <div>
                 <div className='mobile-home'>
                     <Icon/>
-                    <h2>Homey</h2>
+                    <h2>Apartments</h2>
                 </div>
                 <div className='filter-list-mobile'>
                     <ul style={list}>

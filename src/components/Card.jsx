@@ -33,7 +33,7 @@ class Card extends Component {
                         <li><b>Square meter:</b> {size}</li>
                     </ul>
                     { isToggle &&  <CardDetails id={id} title={title} description={description} address={address} city={city} country={country} price={price} size={size} url={url} available={available}/> }
-                    <button onClick={this.toggleButton}>{ isToggle ? `Less details`: `More details`}</button>
+                    <button onClick={this.toggleButton}>{ isToggle ? <b>{`Less details`}</b>: <b>{`More details`}</b>}</button>
                 </div>
             </>
         )

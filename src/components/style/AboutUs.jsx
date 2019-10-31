@@ -6,6 +6,6 @@ export const img = {
 }
 
 export const aboutusDesktop = {
-    marginTop: '20px',
+    marginTop: '5px',
     marginBottom: '0px'
 }
