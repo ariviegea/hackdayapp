@@ -1,11 +1,12 @@
 @media only screen and (min-width: 451px) {
-    .App {
-       
-    }
     .mobile-nav{
         display:block;
+        padding:10px;
     }
     .desktop-nav{
         display:none;
+    }
+    .mobile-nav li {
+        margin-top: 10px;
     }
 }

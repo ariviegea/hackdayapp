@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { navStyle, ulStyle, menuStyle } from './style/Nav';
 import { slide as Menu } from 'react-burger-menu';
+import Icon from './Icon';
+
 
 class Nav extends Component {
     showSettings(event) {
@@ -12,8 +14,8 @@ class Nav extends Component {
             <>
                 <div className="mobile-nav">
                     <Menu style={menuStyle} right reveal >
+                        <Icon/>
                         <div style={navStyle}>
-                            <h1>Logo</h1>
                             <ul style={ulStyle}>
                                 <Link to="/">
                                     <li>Home</li>
@@ -31,10 +33,9 @@ class Nav extends Component {
                 <div className="desktop-nav">
                     <nav>
                     <div style={navStyle}>
-                        <h1>Logo</h1>
                         <ul style={ulStyle}>
                             <Link to="/">
-                                <li>Home</li>
+                                <li><Icon/></li>
                             </Link>
                             <Link to="/apartments">
                                 <li>Apartments</li>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Checkbox } from "antd";
-// import Apartments from './Apartments';
-// import { apartment } from './style/Card';
+
 
 const list = {
     display:'flex',

@@ -7,19 +7,38 @@
 .bm-cross-button {
     background-image:url('../images/close.svg');
 }
+.bm-overlay {
+    display:none;
+}
+
+h1 {
+    text-align:center;
+}
+
+p {
+    text-align: justify;
+    padding: 10px 25px;
+}
 
 @media only screen and (max-width: 450px) {
-    .App {
-        background-color:red;
-    }
     /* Sidebar styling */ 
     .mobile-nav{
         display:block;
+        padding:10px;
     }
     .desktop-nav{
         display:none;
     }
     .bm-menu-wrap{
-        max-width:280px;
+        max-width:200px;
+    }
+    .mobile-nav li {
+        margin-top: 10px;
+    }
+    .about-us{
+        margin:10px;
+    }
+    .bm-burger-button button {
+        width: 30%;
     }
 }

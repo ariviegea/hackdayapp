@@ -12,5 +12,6 @@ export const list = {
 
 export const img = {
     width: '100%',
-    height: '200px'
+    height: 'auto',
+    padding: '30px'
 }
