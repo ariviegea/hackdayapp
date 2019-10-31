@@ -2,15 +2,46 @@ import React, { Component } from 'react';
 import { list } from './style/Card';
 
 class CardDetails extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            apartments: {
+                id: this.props.id,
+                title: this.props.title,
+                description: this.props.description,
+                address: this.props.address,
+                city: this.props.city,
+                country: this.props.country,
+                price: this.props.price,
+                size: this.props.size,
+                url: this.props.url,
+                available: this.props.available
+            }
+        }
+    }
+
+    bookAppartment = () => {
+        fetch(`/api/apartments/${this.props.id}`, {
+			method: 'PUT',
+			headers: {
+			  "Content-type": "application/json"
+            },
+            body: JSON.stringify(this.state.apartments)
+        })
+        .then(res => res.json())
+        .then(apartments => { this.setState({ apartments })})
+        .catch(err => console.log(err, 'Put request not working'));
+    }
+
     render() {
-        const { description, available } = this.props;
+        const { description } = this.props;
         return (
             <div>
                 <ul style={list}>
                     <li>{description}</li>
-                    <li>{available ? <b>Available</b> : <b>Not available</b>}</li>
+                    <li>{this.state.apartments.available.toString()}</li>
                 </ul>
-                <button>Book</button>
+                <button onClick={this.bookAppartment}>Book</button>
             </div>
         );
     }

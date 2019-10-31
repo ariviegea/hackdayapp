@@ -124,7 +124,7 @@ app.put('/api/apartments/:id', (req, res) => {
     }
     
     apartmentsToUpdate.available = !apartmentsToUpdate.available
-    res.status(204).send(apartmentsToUpdate)
+    res.status(200).send(apartmentsToUpdate)
 });
 
 const port = 5000;

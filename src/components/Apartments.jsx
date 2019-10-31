@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Card from './Card';
 
 class Apartments extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state={
             apartments: [],
         };
@@ -12,14 +12,14 @@ class Apartments extends Component {
         fetch('/api/apartments')
           .then(res => res.json())
           .then(apartments => this.setState({apartments}))
-          .catch('Issues with the server')
+          .catch('Issues getting data from the server')
     }
 
     render() {
         const { apartments } = this.state;
         return (
             <div>
-                {apartments.map((apartment, index) => <Card key={index} title={apartment.title} description={apartment.description} address={apartment.address} city={apartment.city} country={apartment.country} price={apartment.price} size={apartment.size} url={apartment.url} available={apartment.available} /> )}
+                {apartments.map((apartment, index) => <Card key={index} props={this.props} id={apartment.id} title={apartment.title} description={apartment.description} address={apartment.address} city={apartment.city} country={apartment.country} price={apartment.price} size={apartment.size} url={apartment.url} available={apartment.available} /> )}
             </div>
         );
     }
