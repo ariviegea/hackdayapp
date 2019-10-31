@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import { carrousel } from './style/Home';
+import { carrousel, pStyle } from './style/Home';
 
 class Home extends Component {
     render() {
         return (
-            <div>
-                
+            <>
+             <div className='mobile-home'>
+                 <h1>Home</h1>
+             </div>
                 <Carousel>
                     <Carousel.Item>
                         <img
@@ -14,10 +16,6 @@ class Home extends Component {
                         src={carrousel.img1}
                         alt="First slide"
                         />
-                        <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
@@ -25,26 +23,17 @@ class Home extends Component {
                         src={carrousel.img2}
                         alt="Third slide"
                         />
-
-                        <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
                         className="d-block w-100"
-                        src="holder.js/800x400?text=Third slide&bg=20232a"
+                        src={carrousel.img3}
                         alt="Third slide"
                         />
-
-                        <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                        </Carousel.Caption>
                     </Carousel.Item>
-                    </Carousel>
-            </div>
+                </Carousel>
+                <p style={pStyle}>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+            </>
         )
     }
 }

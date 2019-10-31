@@ -9,4 +9,7 @@
     .mobile-nav li {
         margin-top: 10px;
     }
+    .mobile-home{
+        display: block;
+    }
 }

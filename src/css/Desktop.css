@@ -5,5 +5,8 @@
     .desktop-nav{
         display:block;
     }
+    .mobile-home{
+        display: none;
+    }
     
 }

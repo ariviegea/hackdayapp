@@ -41,4 +41,7 @@ p {
     .bm-burger-button button {
         width: 30%;
     }
+    .mobile-home{
+        display: block;
+    }
 }
