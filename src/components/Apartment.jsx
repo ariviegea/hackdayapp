@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
 
 class Apartment extends Component {
-    constructor() {
-        super();
-        this.state={
-            data: null,
-        };
-    }
-    componentDidMount() {
-        fetch('http://localhost:5000/api/apartments')
-    }
 
     render() {
         return (

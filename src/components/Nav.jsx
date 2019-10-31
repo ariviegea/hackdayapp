@@ -19,21 +19,21 @@ class Nav extends Component {
         return (
             <>
                 <div className="mobile-nav">
-                     <Menu style={menuStyle}>
-                    <div style={navStyle}>
-                        <h1>Logo</h1>
-                        <ul style={ulStyle}>
-                            <Link to="/">
-                                <li>Home</li>
-                            </Link>
-                            <Link to="/apartments">
-                                <li>Apartments</li>
-                            </Link>
-                            <Link to="/about">
-                                <li>About</li>
-                            </Link>
-                        </ul>
-                    </div>
+                    <Menu style={menuStyle}>
+                        <div style={navStyle}>
+                            <h1>Logo</h1>
+                            <ul style={ulStyle}>
+                                <Link to="/">
+                                    <li>Home</li>
+                                </Link>
+                                <Link to="/apartments">
+                                    <li>Apartments</li>
+                                </Link>
+                                <Link to="/about">
+                                    <li>About</li>
+                                </Link>
+                            </ul>
+                        </div>
                     </Menu>
                 </div>
                 <div className="desktop-nav">

@@ -86,8 +86,8 @@ const apartments = [
         "available": true,
     },
 ];
+
 app.get('/api/apartments', (req, res) => {
-    
     res.json(apartments);
 });
 
