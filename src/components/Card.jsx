@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { apartment, list, img } from './style/Card';
-import  ApartmentDetails from './ApartmentDetails';
+import  CardDetails from './CardDetails';
 
 
 
@@ -33,7 +33,7 @@ class Card extends Component {
                     <li><b>Square meter:</b> {size}</li>
                     <li>{available}</li>
                 </ul>
-                { isToggle &&  <ApartmentDetails description={description} available={available}/> }
+                { isToggle &&  <CardDetails description={description} available={available}/> }
                 <h3 onClick={this.toggleButton}>{ isToggle ? `Less details`: `More details`}</h3>
             </div>
         )

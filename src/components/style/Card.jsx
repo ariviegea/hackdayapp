@@ -7,7 +7,6 @@ export const apartment = {
 }
 export const list = {
     listStyle: 'none',
-    textAling: 'center',
     padding:'0',
 }
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Card from './Card';
-import ApartmentDetails from './ApartmentDetails';
 
 class Apartments extends Component {
     constructor() {
@@ -13,6 +12,7 @@ class Apartments extends Component {
         fetch('/api/apartments')
           .then(res => res.json())
           .then(apartments => this.setState({apartments}))
+          .catch('Issues with the server')
     }
 
     render() {
