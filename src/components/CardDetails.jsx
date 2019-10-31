@@ -33,13 +33,15 @@ class CardDetails extends Component {
         .catch(err => console.log(err, 'Put request not working'));
     }
 
+   
+
     render() {
         const { description } = this.props;
         return (
             <div>
                 <ul style={list}>
                     <li>{description}</li>
-                    <li>{this.state.apartments.available.toString()}</li>
+                    <li><b>{this.state.apartments.available === true ? 'Available' : 'Not available'}</b></li>
                 </ul>
                 <button onClick={this.bookAppartment}>Book</button>
             </div>
