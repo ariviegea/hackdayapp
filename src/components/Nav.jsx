@@ -11,7 +11,7 @@ class Nav extends Component {
         return (
             <>
                 <div className="mobile-nav">
-                    <Menu style={menuStyle} reveal >
+                    <Menu style={menuStyle} right reveal >
                         <div style={navStyle}>
                             <h1>Logo</h1>
                             <ul style={ulStyle}>

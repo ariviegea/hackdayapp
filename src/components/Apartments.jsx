@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from './Card';
+import ApartmentDetails from './ApartmentDetails';
 
 class Apartments extends Component {
     constructor() {
@@ -11,7 +12,7 @@ class Apartments extends Component {
     componentDidMount() {
         fetch('/api/apartments')
           .then(res => res.json())
-          .then(apartments => this.setState({apartments}, () => console.log('Hello work bitch', apartments)))
+          .then(apartments => this.setState({apartments}))
     }
 
     render() {
