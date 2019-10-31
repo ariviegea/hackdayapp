@@ -1,0 +1,19 @@
+.nav {
+    background-color: black;
+}
+
+
+@media only screen and (max-width: 450px) {
+    .App {
+        background-color:red;
+    }
+    /* Sidebar styling */ 
+    .mobile-nav{
+        display:block;
+    }
+    .desktop-nav{
+        display:none;
+    }
+   
+    
+}
