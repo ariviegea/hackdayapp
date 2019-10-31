@@ -1,7 +1,12 @@
 .nav {
     background-color: black;
 }
-
+.bm-menu{
+    background-color: white;
+}
+.bm-cross-button {
+    background-image:url('../images/close.svg');
+}
 
 @media only screen and (max-width: 450px) {
     .App {
@@ -14,6 +19,7 @@
     .desktop-nav{
         display:none;
     }
-   
-    
+    .bm-menu-wrap{
+        max-width:280px;
+    }
 }

@@ -1,14 +1,15 @@
-
-const navStyle = {
+export const menuStyle = {
+    listStyle: 'none',
+}
+export const navStyle = {
     border:'1px solid black',
     padding:'20px',
     listStyle:'none'
 }
 
-const ulStyle = {
+export const ulStyle = {
     listStyle: 'none',
     display: 'flex',
     justifyContent: 'space-evenly',
+    color:'pink'
 }
-
-exports.defaults = { ulStyle, navStyle}

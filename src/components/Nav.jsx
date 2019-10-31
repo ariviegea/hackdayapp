@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { navStyle, ulStyle } from './style/Nav';
+import { navStyle, ulStyle, menuStyle } from './style/Nav';
 import { slide as Menu } from 'react-burger-menu';
-
-const menuStyle = {
-    backgroundColor:'black',
-    width:'300px'
-    // bm-overlay
-    // bm-menu-wrap
-    // bm-burger-button"
-}
 
 class Nav extends Component {
     showSettings(event) {
@@ -19,7 +11,7 @@ class Nav extends Component {
         return (
             <>
                 <div className="mobile-nav">
-                    <Menu style={menuStyle}>
+                    <Menu style={menuStyle} reveal >
                         <div style={navStyle}>
                             <h1>Logo</h1>
                             <ul style={ulStyle}>
