@@ -24,7 +24,7 @@ const apartments = [
         price: "3000",
         size: "70m2",
         url: "https://cf.ltkcdn.net/interiordesign/images/std/206259-668x450-Japanese-style-Interior.jpg",
-        available: true,
+        available: false,
     },
     {
         id:"3",
@@ -118,14 +118,13 @@ app.get('/api/apartments/:id', (req, res) => {
 app.put('/api/apartments/:id', (req, res) => {
 
     let apartmentsToUpdate = apartments.find(apartment => apartment.id === req.params.id);
-
+    
     if(!apartmentsToUpdate) {
         res.status(404).json({msg:`Unexistent apartment with id ${req.params.id}`});
     }
-
-    apartmentsToUpdate.available = req.body.available ? req.body.available === true : apartmentsToUpdate.available === false;
-
-    res.status(204).send(false);
+    
+    apartmentsToUpdate.available = !apartmentsToUpdate.available
+    res.status(204).send(apartmentsToUpdate)
 });
 
 const port = 5000;
