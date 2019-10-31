@@ -18,4 +18,11 @@
     .apartment-section ul {
         text-align: center;
     }
+    .filter-list-mobile{
+        display:none;
+    }
+    .filter-list-desktop ul{
+        display:flex;
+        justify-content:center;
+    }
 }

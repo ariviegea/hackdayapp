@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { carrousel, pStyle } from './style/Home';
+import Icon from './Icon';
 
 class Home extends Component {
     render() {
         return (
             <>
              <div className='mobile-home'>
-                 <h1>Home</h1>
+                <Icon/>
+                 <h2>Homey</h2>
              </div>
                 <Carousel>
                     <Carousel.Item>

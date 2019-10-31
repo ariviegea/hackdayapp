@@ -11,7 +11,7 @@
     display:none;
 }
 
-h1 {
+h2 {
     text-align:center;
 }
 
@@ -50,5 +50,16 @@ p {
     .apartment-section ul {
         text-align: justify;
         text-align-last: left;
+    }
+    .filter{
+        display: flex;
+        align-items:center;
+    }
+    .filter-list-mobile{
+        display:flex;
+        justify-content: center;
+    }
+    .filter-list-desktop{
+        display:none;
     }
 }

@@ -1,31 +1,25 @@
 import React, { Component } from 'react';
 import { Checkbox } from "antd";
 
-
-const list = {
-    display:'flex',
-    justifyContent:'center',
-    listStyle:'none'
-}
 const li = {
     marginLeft:'10px'
 }
 
 class Filter extends Component {
 
-    filteredCity = (city) => this.props.apartments.filter(apartment => apartment.city === city);
+    filteredCountry = (country) => this.props.apartments.filter(apartment => apartment.country === country);
     
-    onCheck = (e, city) => {
+    onCheck = (e, country) => {
         if(e.target.checked)
-            this.props.changeToDisplay(this.filteredCity(city));
+            this.props.changeToDisplay(this.filteredCountry(country));
     }
 
     render() {
        
-        return this.props.apartments.map(city => (
-                <ul style={list}>
-                    <li style={li}><Checkbox onChange={e => this.onCheck(e, city.city)}/> {city.city}</li>
-                </ul>
+        return this.props.apartments.map(country => (
+            <div className='filter'>
+                    <li style={li}><Checkbox onChange={e => this.onCheck(e, country.country)}/> {country.country}</li>
+            </div>
         ));
             
     }

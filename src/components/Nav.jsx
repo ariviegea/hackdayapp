@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { navStyle, ulStyle, menuStyle } from './style/Nav';
+import { ulStyle, menuStyle, ulStyleDesktop, navStyleDesktop, navStyleMobile} from './style/Nav';
 import { slide as Menu } from 'react-burger-menu';
-import Icon from './Icon';
 
 
 class Nav extends Component {
@@ -14,8 +13,7 @@ class Nav extends Component {
             <>
                 <div className="mobile-nav">
                     <Menu style={menuStyle} right reveal >
-                        <Icon/>
-                        <div style={navStyle}>
+                        <div style={navStyleMobile}>
                             <ul style={ulStyle}>
                                 <Link to="/">
                                     <li>Home</li>
@@ -32,10 +30,10 @@ class Nav extends Component {
                 </div>
                 <div className="desktop-nav">
                     <nav>
-                    <div style={navStyle}>
-                        <ul style={ulStyle}>
+                    <div style={navStyleDesktop}>
+                        <ul style={ulStyleDesktop}>
                             <Link to="/">
-                                <li><Icon/></li>
+                                <li>Home</li>
                             </Link>
                             <Link to="/apartments">
                                 <li>Apartments</li>

@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import Card from './Card';
 import Filter from './Filter';
+import Icon from './Icon';
 
+const list= {
+    listStyle:'none',
+    margin: '10px'
+}
 
 class Apartments extends Component {
     constructor(props) {
@@ -20,17 +25,30 @@ class Apartments extends Component {
           .catch('Issues getting data from the server')
     }
 
-    changeToDisplay = (cities) => {
+    changeToDisplay = (countries) => {
         this.setState({
             ...this.state,
-            toDisplay: cities
+            toDisplay: countries
         })
     }
 
     render() {
         return (
             <div>
-                <Filter apartments={this.state.apartments} changeToDisplay={this.changeToDisplay} />
+                <div className='mobile-home'>
+                    <Icon/>
+                    <h2>Homey</h2>
+                </div>
+                <div className='filter-list-mobile'>
+                    <ul style={list}>
+                        <Filter apartments={this.state.apartments} changeToDisplay={this.changeToDisplay} />
+                    </ul>
+                </div>
+                <div className='filter-list-desktop'>
+                    <ul style={list}>
+                        <Filter apartments={this.state.apartments} changeToDisplay={this.changeToDisplay} />
+                     </ul>   
+                </div>
                 {this.state.toDisplay.map((apartment, index) => <Card key={index} props={this.props} id={apartment.id} title={apartment.title} description={apartment.description} address={apartment.address} city={apartment.city} country={apartment.country} price={apartment.price} size={apartment.size} url={apartment.url} available={apartment.available} /> )} 
             </div>
         );

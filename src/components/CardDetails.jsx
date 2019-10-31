@@ -42,7 +42,7 @@ class CardDetails extends Component {
             <div>
                 <ul style={list}>
                     <li><p>{description}</p></li>
-        <li>{this.state.apartments.available === true ? <b style={available}>{'Available'}</b> : <b style={notavailable}>{'Not available'}</b>}</li>
+                    <li>{this.state.apartments.available === true ? <b style={available}>{'Available'}</b> : <b style={notavailable}>{'Not available'}</b>}</li>
                 </ul>
                 <button onClick={this.bookAppartment}>Book</button>
             </div>

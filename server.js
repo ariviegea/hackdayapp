@@ -73,18 +73,7 @@ const apartments = [
         size: "90m2",
         url: "https://media-cdn.tripadvisor.com/media/vr-splice-j/06/74/6e/f3.jpg",
         available: true,
-    },
-    {
-        id:"7",
-        title: "Romantic apartment in Paris",
-        description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-        address: "La rou de l'amour, 7",
-        city: "Paris",
-        country: "France",
-        price: "600",
-        url: "https://www.parisperfect.com/g/apartment-hero-images/hi_3-160827-369_new.jpg",
-        available: true,
-    },
+    }
 ];
 
 // Error middleware
