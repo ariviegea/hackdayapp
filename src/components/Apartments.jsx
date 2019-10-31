@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Apartment from './Apartment';
 
 class Apartments extends Component {
     constructor() {
@@ -17,7 +18,7 @@ class Apartments extends Component {
         const { apartments } = this.state;
         return (
             <div>
-                {apartments.map(apartment => apartment.title)}
+                {apartments.map((apartment, index) => <Apartment key={index} title={apartment.title} description={apartment.description} address={apartment.address} city={apartment.city} country={apartment.country} price={apartment.price} size={apartment.size} url={apartment.url} available={apartment.available} /> )}
             </div>
         );
     }
