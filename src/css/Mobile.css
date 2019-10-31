@@ -44,4 +44,11 @@ p {
     .mobile-home{
         display: block;
     }
+    .apartment-section{
+      align-content:center;
+    }
+    .apartment-section ul {
+        text-align: justify;
+        text-align-last: left;
+    }
 }

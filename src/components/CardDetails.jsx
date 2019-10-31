@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { list } from './style/Card';
+import { available, notavailable } from './style/CardDetails';
 
 class CardDetails extends Component {
     constructor(props) {
@@ -40,8 +41,8 @@ class CardDetails extends Component {
         return (
             <div>
                 <ul style={list}>
-                    <li>{description}</li>
-                    <li><b>{this.state.apartments.available === true ? 'Available' : 'Not available'}</b></li>
+                    <li><p>{description}</p></li>
+        <li>{this.state.apartments.available === true ? <b style={available}>{'Available'}</b> : <b style={notavailable}>{'Not available'}</b>}</li>
                 </ul>
                 <button onClick={this.bookAppartment}>Book</button>
             </div>

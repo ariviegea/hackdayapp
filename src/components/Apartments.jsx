@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from './Card';
 import Filter from './Filter';
 
+
 class Apartments extends Component {
     constructor(props) {
         super(props);

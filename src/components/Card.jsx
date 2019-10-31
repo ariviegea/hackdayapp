@@ -22,9 +22,9 @@ class Card extends Component {
         return (
             
             <>
-                <div style={apartment}>
+                <div className="apartment-section" style={apartment}>
                     <ul style={list}>
-                        <li><b>{title}</b></li>
+                        <li><h2>{title}</h2></li>
                         <li><img style={img} src={url} alt={title}></img></li>
                         <li><b>Address:</b> {address}</li>
                         <li><b>City:</b> {city}</li>
