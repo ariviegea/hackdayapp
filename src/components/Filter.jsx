@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+const filterBar = {
+    border: '1px solid black'
+}
+
+
 class Filter extends Component {
     constructor(props) {
         super(props);
@@ -12,9 +17,10 @@ class Filter extends Component {
        
         return (
             <>
-               <Filter style={filterBar}>
-
-               </Filter>
+                <ul>
+                    <li>Hello</li>
+                    <li>Bye</li>
+                </ul>
             </>
         );
     }

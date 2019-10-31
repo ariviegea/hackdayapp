@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from './Card';
+import Filter from './Filter';
 
 class Apartments extends Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class Apartments extends Component {
         const { apartments } = this.state;
         return (
             <div>
+                <Filter/>
                 {apartments.map((apartment, index) => <Card key={index} props={this.props} id={apartment.id} title={apartment.title} description={apartment.description} address={apartment.address} city={apartment.city} country={apartment.country} price={apartment.price} size={apartment.size} url={apartment.url} available={apartment.available} /> )}
             </div>
         );
