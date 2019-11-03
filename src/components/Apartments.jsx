@@ -20,15 +20,14 @@ class Apartments extends Component {
         fetch('/api/apartments')
           .then(res => res.json())
           .then(apartments => {
-            this.setState({...this.state, apartments, toDisplay: apartments});
+            this.setState({apartments, toDisplay: apartments});
           })
           .catch('Issues getting data from the server')
     }
 
-    changeToDisplay = (countries) => {
+    changeToDisplay = (cities) => {
         this.setState({
-            ...this.state,
-            toDisplay: countries
+            toDisplay: cities
         })
     }
 

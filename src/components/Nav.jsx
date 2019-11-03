@@ -24,6 +24,9 @@ class Nav extends Component {
                                 <Link to="/about">
                                     <li>About</li>
                                 </Link>
+                                <Link to="/admin">
+                                <li>Admin</li>
+                                </Link>
                             </ul>
                         </div>
                     </Menu>
@@ -40,6 +43,9 @@ class Nav extends Component {
                             </Link>
                             <Link to="/about">
                                 <li>About</li>
+                            </Link>
+                            <Link to="/admin">
+                                <li>Admin</li>
                             </Link>
                         </ul>
                     </div>

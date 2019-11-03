@@ -8,4 +8,7 @@
     .mobile-home{
         display: none;
     }
+    .mobile-admin{
+        display:none;
+    }
 }
