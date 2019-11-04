@@ -81,18 +81,6 @@ const apartments = [
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors());
-
-// Error middleware
-app.use((err, req, res, next) => {
-    res.status(500).send('Something broke!');
-    next(err);
-  });
-  
-  app.use((err, req, res, next) => {
-    res.status(404).send('Error 404 occurred');
-    next(err);
-  });
 
 // Get all apartments 
 app.get('/api/apartments', (req, res) => {
@@ -125,9 +113,8 @@ app.put('/api/apartments/:id', (req, res) => {
 
 // Create a new apartment 
 app.post('/api/apartments', (req, res) => {
-    console.log(req.body);
    if(apartments.find(apartment => apartment.id === req.body.id)) {
-       res.status(400).json({msg: `Apartment with id ${req.body.id} already exists`});
+       res.status(400).send({msg: `Apartment with id ${req.body.id} already exists`});
        return;
    }
    const newApartment = {
@@ -135,16 +122,16 @@ app.post('/api/apartments', (req, res) => {
        title: req.body.title,
        description: req.body.description,
        address: req.body.address,
-       city: req.body.city,
-       country: req.body.country,
-       price: req.body.price,
-       size: req.body.size,
-       url: req.body.url,
-       available: req.body.available
+    //    city: req.body.city,
+    //    country: req.body.country,
+    //    price: req.body.price,
+    //    size: req.body.size,
+    //    url: req.body.url,
+    //    available: req.body.available
    }
    apartments.push(newApartment);
 
-   res.status(201).json(newApartment);
+   res.status(201).send(newApartment);
 })
 
 const port = 5000;

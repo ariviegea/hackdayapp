@@ -38,6 +38,19 @@ class About extends Component {
         })
     }
 
+    addNewApartment = (e) => {
+        e.preventDefault()
+        console.log(this.state);
+        fetch('/api/apartments', {
+            method: 'POST',
+            headers: {
+              'Content-type': 'application/json'
+            },
+            body: JSON.stringify(this.state)
+        });
+    }
+
+
     render() {
         const { title, description, address, id, submit } = this.state;
         return (
@@ -49,24 +62,24 @@ class About extends Component {
                 <div>
                 <h3 style={formStyle}>Submit new apartment</h3>
                     <div style={formStyle}>
-                            <form >
+                            <form>
                                 <label style={label}>
                                 Id:
-                                    <input style={input} text='text' value={id} onChange={this.handleId}/>
+                                    <input style={input} type='text' value={id} onChange={this.handleId}/>
                                 </label>
                                 <label style={label}>
                                 Title:
-                                    <input style={input} text='text' value={title} onChange={this.handleTitle}/>
+                                    <input style={input} type='text' value={title} onChange={this.handleTitle}/>
                                 </label>
                                 <label style={label}>
                                 Description:
-                                    <textarea style={input} text='text' value={description} onChange={this.handleDescription}/>
+                                    <textarea style={input} type='text' value={description} onChange={this.handleDescription}/>
                                 </label>
                                 <label style={label}>
                                 Address:
-                                    <input style={input} text='text' value={address} onChange={this.handleAddress}/>
+                                    <input style={input} type='text' value={address} onChange={this.handleAddress}/>
                                 </label>
-                                <input type='submit' value={submit}/>
+                                <button type='submit' value={submit} onClick={this.addNewApartment}>Submit</button>
                             </form>
                     </div>
                 </div>
