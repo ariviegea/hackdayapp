@@ -1,6 +1,8 @@
+// https://appdividend.com/2018/08/22/express-post-request-example-tutorial/#Express_Post_Request_Example_Tutorial
 const express = require('express');
-
+const bodyParser = require('body-parser');
 const app = express();
+
 const apartments = [
     {
         id:"1",
@@ -76,6 +78,11 @@ const apartments = [
     }
 ];
 
+// Body parser middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cors());
+
 // Error middleware
 app.use((err, req, res, next) => {
     res.status(500).send('Something broke!');
@@ -118,9 +125,9 @@ app.put('/api/apartments/:id', (req, res) => {
 
 // Create a new apartment 
 app.post('/api/apartments', (req, res) => {
-   const checkId = apartments.find(apartment => apartment.id);
-   if(checkId === req.body.id) {
-       res.status(500).json({msg: `Apartment with id ${req.body.id} already exists`});
+    console.log(req.body);
+   if(apartments.find(apartment => apartment.id === req.body.id)) {
+       res.status(400).json({msg: `Apartment with id ${req.body.id} already exists`});
        return;
    }
    const newApartment = {
@@ -143,4 +150,3 @@ app.post('/api/apartments', (req, res) => {
 const port = 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
-
