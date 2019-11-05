@@ -20,12 +20,15 @@ const initialState = {
 class About extends Component {
     constructor(props) {
         super(props);
-        this.state = initialState
+        this.state = {
+            inputFields: initialState,
+            statusmessage: ''
+        }
     }
 
     handleEvent = (e) => {
         this.setState({
-            [`${e.target.name}`]: e.target.value
+            inputFields: {...this.state.inputFields, ...{[`${e.target.name}`]: e.target.value}}
         });
     }
     addNewApartment = async(e) => {
@@ -37,7 +40,7 @@ class About extends Component {
             headers: {
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify(this.state)
+            body: JSON.stringify(this.state.inputFields)
         });
         if(response.status === 201){
             this.setState(initialState);
@@ -53,11 +56,11 @@ class About extends Component {
 
     displayMessage = (message) => {
         console.log(message);
-        return message;
+        this.setState({statusmessage: message});
     }
 
     printInputFields = () => {
-        const state = this.state;
+        const state = this.state.inputFields;
         const formInputs = [];
         for (let property of Object.keys(state)) {
             if(!(property === 'description')){
@@ -78,6 +81,7 @@ class About extends Component {
                 </div>
                 <div>
                     <h3 style={formStyle}>Submit new apartment</h3>
+                    <h1>{this.state.statusmessage}</h1>
                     <div style={formStyle}>
                         <form onSubmit={this.addNewApartment}>
                             {this.printInputFields()}
