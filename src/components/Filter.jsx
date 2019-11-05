@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Checkbox } from "antd";
+import { Checkbox } from 'antd';
 
 const li = {
     marginLeft:'10px'
@@ -7,18 +7,18 @@ const li = {
 
 class Filter extends Component {
 
-    filteredCountry = (country) => this.props.apartments.filter(apartment => apartment.country === country);
+    filteredCountry = (city) => this.props.apartments.filter(apartment => apartment.city === city);
     
-    onCheck = (e, country) => {
+    onCheck = (e, city) => {
         if(e.target.checked)
-            this.props.changeToDisplay(this.filteredCountry(country));
+            this.props.changeToDisplay(this.filteredCountry(city));
     }
 
     render() {
        
-        return this.props.apartments.map(country => (
+        return this.props.apartments.map(city => (
             <div className='filter'>
-                    <li style={li}><Checkbox onChange={e => this.onCheck(e, country.country)}/> {country.country}</li>
+                    <li style={li}><Checkbox onChange={e => this.onCheck(e, city.city)}/> {city.city}</li>
             </div>
         ));
             

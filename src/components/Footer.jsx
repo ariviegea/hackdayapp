@@ -6,7 +6,8 @@ class Footer extends Component {
         return (
             <div style={footer}>
                 <ul style={ulFooter}>
-                    <li>Homey, all rights registered</li>
+                    <li>Homey, all rights reserved to Ariadna</li>
+                    <li>who almost died building this</li>
                     <li>EpiCenter Stockholm, Sweden</li>
                     <li>9875567</li>
                 </ul>
