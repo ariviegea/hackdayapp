@@ -17,7 +17,7 @@ class Card extends Component {
     }
 
     render() {
-        const { id, title, description, address, city, country, price, size, url, available} = this.props;
+        const { title, street, flat, city, country, price, size, url } = this.props;
         const { isToggle } = this.state;
         return (
             
@@ -26,7 +26,8 @@ class Card extends Component {
                     <ul style={list}>
                         <li><h2>{title}</h2></li>
                         <li><img style={img} src={url} alt={title}></img></li>
-                        <li><b>Address:</b> {address}</li>
+                        <li><b>Street:</b> {street}</li>
+                        <li><b>Number:</b> {flat}</li>
                         <li><b>City:</b> {city}</li>
                         <li><b>Country:</b> {country}</li>
                         <li><b>Price:</b> {price} €</li>

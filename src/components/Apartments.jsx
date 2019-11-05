@@ -51,7 +51,7 @@ class Apartments extends Component {
                      </ul>   
                 </div>
                 {   this.state.finishspinner ?
-                    this.state.toDisplay.map((apartment, index) => <Card key={index} props={this.props} id={apartment.id} title={apartment.title} description={apartment.description} address={apartment.address} city={apartment.city} country={apartment.country} price={apartment.price} size={apartment.size} url={apartment.url} available={apartment.available} /> )
+                    this.state.toDisplay.map((apartment, index) => <Card key={index} props={this.props} id={apartment.id} title={apartment.title} description={apartment.description} street={apartment.street} flat={apartment.flat} city={apartment.city} country={apartment.country} price={apartment.price} size={apartment.size} url={apartment.url} available={apartment.available} /> )
                     : this.state.spinner
                 } 
             </div>

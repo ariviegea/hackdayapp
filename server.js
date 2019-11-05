@@ -2,13 +2,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const uuid = require('uuid/v4');
 
 const apartments = [
     {
-        id:"1",
+        id:uuid(),
         title: "Fantastic apartment middle of Barcelona",
         description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-        address: "paral.lel 21",
+        street: "Paral.lel 21",
+        flat:"5e 4a",
         city: "Barcelona",
         country: "Spain",
         price: "1000",
@@ -17,10 +19,11 @@ const apartments = [
         available: true,
     },
     {
-        id:"2",
+        id:uuid(),
         title: "Fantastic apartment middle of Tokyo",
         description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-        address: "shibuya 3",
+        street: "Paral.lel 24",
+        flat:"2e 1a",
         city: "Tokyo",
         country: "Japan",
         price: "3000",
@@ -29,10 +32,11 @@ const apartments = [
         available: false,
     },
     {
-        id:"3",
+        id:uuid(),
         title: "Amazing penthouse in Sydney",
         description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-        address: "sydney 3",
+        street: "Paral.lel 23",
+        flat:"3",
         city: "Sydney",
         country: "Australia",
         price: "6000",
@@ -41,10 +45,11 @@ const apartments = [
         available: true,
     },
     {
-        id:"4",
+        id:uuid(),
         title: "Old style apartment in Salamanca",
         description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-        address: "calle de Salamanca, 3",
+        street: "Paral.lel 21",
+        flat:"5e 4a",
         city: "Madrid",
         country: "Spain",
         price: "1000",
@@ -53,10 +58,11 @@ const apartments = [
         available: true,
     },
     {
-        id:"5",
+        id:uuid(),
         title: "Luxury Villa in Buenos Aires",
         description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-        address: "calle de buenos aires, 7",
+        street: "Paral.lel 26",
+        flat:"5e 4a",
         city: "Buenos Aires",
         country: "Argentina",
         price: "600",
@@ -65,10 +71,11 @@ const apartments = [
         available: true,
     },
     {
-        id:"6",
+        id:uuid(),
         title: "Lovely downtown apartment",
         description: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
-        address: "calle de buenos aires, 7",
+        street: "Paral.lel 22",
+        flat:"5e 4a",
         city: "Cairo",
         country: "Egypt",
         price: "600",
@@ -113,15 +120,16 @@ app.put('/api/apartments/:id', (req, res) => {
 
 // Create a new apartment 
 app.post('/api/apartments', (req, res) => {
-   if(apartments.find(apartment => apartment.id === req.body.id)) {
-       res.status(400).send({msg: `Apartment with id ${req.body.id} already exists`});
+   if(apartments.find(apartment => (apartment.street === req.body.street) && (apartment.flat === req.body.flat))) {
+       res.status(400).send({msg: `Apartment with street ${req.body.street} or ${req.body.flat} already exists`});
        return;
    }
    const newApartment = {
-       id: req.body.id,
+       id: uuid(),
        title: req.body.title,
        description: req.body.description,
-       address: req.body.address,
+       street: req.body.street,
+       flat: req.body.flat,
        city: req.body.city,
        country: req.body.country,
        price: req.body.price,
