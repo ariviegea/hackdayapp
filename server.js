@@ -122,12 +122,12 @@ app.post('/api/apartments', (req, res) => {
        title: req.body.title,
        description: req.body.description,
        address: req.body.address,
-    //    city: req.body.city,
-    //    country: req.body.country,
-    //    price: req.body.price,
-    //    size: req.body.size,
-    //    url: req.body.url,
-    //    available: req.body.available
+       city: req.body.city,
+       country: req.body.country,
+       price: req.body.price,
+       size: req.body.size,
+       url: req.body.url,
+       available: req.body.available
    }
    apartments.push(newApartment);
 

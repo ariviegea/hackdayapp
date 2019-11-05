@@ -10,7 +10,13 @@ class About extends Component {
             id: '',
             title:'',
             description: '',
-            address: ''
+            address: '',
+            city: '',
+            country: '',
+            price: '',
+            size: '',
+            url: '',
+            available: ''
         }
     }
 
@@ -37,6 +43,38 @@ class About extends Component {
             address: e.target.value
         })
     }
+    
+    handleCity = (e) => {
+        this.setState({
+            city: e.target.value
+        })
+    }
+
+    handleCountry = (e) => {
+        this.setState({
+            country: e.target.value
+        })
+    }
+    handlePrice = (e) => {
+        this.setState({
+            country: e.target.value
+        })
+    }
+    handleSize= (e) => {
+        this.setState({
+            country: e.target.value
+        })
+    }
+    handleUrl= (e) => {
+        this.setState({
+            country: e.target.value
+        })
+    }
+    handleAvailable= (e) => {
+        this.setState({
+            country: e.target.value
+        })
+    }
 
     addNewApartment = (e) => {
         e.preventDefault()
@@ -52,7 +90,7 @@ class About extends Component {
 
 
     render() {
-        const { title, description, address, id, submit } = this.state;
+        const { title, description, address, id, city, country, price, size, url, available, submit } = this.state;
         return (
             <div className='admin'>
                 <div className='mobile-admin'>
@@ -78,6 +116,30 @@ class About extends Component {
                                 <label style={label}>
                                 Address:
                                     <input style={input} type='text' value={address} onChange={this.handleAddress}/>
+                                </label>
+                                <label style={label}>
+                                City:
+                                    <input style={input} type='text' value={city} onChange={this.handleCity}/>
+                                </label>
+                                <label style={label}>
+                                Country:
+                                    <input style={input} type='text' value={country} onChange={this.handleCountry}/>
+                                </label>
+                                <label style={label}>
+                                Price:
+                                    <input style={input} type='text' value={price} onChange={this.handlePrice}/>
+                                </label>
+                                <label style={label}>
+                                Size:
+                                    <input style={input} type='text' value={size} onChange={this.handleSize}/>
+                                </label>
+                                <label style={label}>
+                                Url:
+                                    <input style={input} type='text' value={url} onChange={this.handleUrl}/>
+                                </label>
+                                <label style={label}>
+                                Available:
+                                    <input style={input} type='text' value={available} onChange={this.handleAvailable}/>
                                 </label>
                                 <button type='submit' value={submit} onClick={this.addNewApartment}>Submit</button>
                             </form>

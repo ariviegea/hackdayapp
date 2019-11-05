@@ -13,14 +13,16 @@ class Apartments extends Component {
         super(props);
         this.state={
             apartments: [],
-            toDisplay: []
+            toDisplay: [],
+            spinner: 'Loading...',
+            finishspinner: false
         };
     }
     componentDidMount() {
         fetch('/api/apartments')
           .then(res => res.json())
           .then(apartments => {
-            this.setState({apartments, toDisplay: apartments});
+            this.setState({apartments, toDisplay: apartments, finishspinner: true});
           })
           .catch('Issues getting data from the server')
     }
@@ -48,7 +50,10 @@ class Apartments extends Component {
                         <Filter apartments={this.state.apartments} changeToDisplay={this.changeToDisplay} />
                      </ul>   
                 </div>
-                {this.state.toDisplay.map((apartment, index) => <Card key={index} props={this.props} id={apartment.id} title={apartment.title} description={apartment.description} address={apartment.address} city={apartment.city} country={apartment.country} price={apartment.price} size={apartment.size} url={apartment.url} available={apartment.available} /> )} 
+                {   this.state.finishspinner ?
+                    this.state.toDisplay.map((apartment, index) => <Card key={index} props={this.props} id={apartment.id} title={apartment.title} description={apartment.description} address={apartment.address} city={apartment.city} country={apartment.country} price={apartment.price} size={apartment.size} url={apartment.url} available={apartment.available} /> )
+                    : this.state.spinner
+                } 
             </div>
         );
     }

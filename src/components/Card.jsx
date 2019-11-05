@@ -17,7 +17,7 @@ class Card extends Component {
     }
 
     render() {
-        const { id, title, description, address, city, country, price, size, url, available } = this.props;
+        const { id, title, description, address, city, country, price, size, url, available} = this.props;
         const { isToggle } = this.state;
         return (
             
@@ -32,7 +32,7 @@ class Card extends Component {
                         <li><b>Price:</b> {price} €</li>
                         <li><b>Square meter:</b> {size} m2</li>
                     </ul>
-                    { isToggle &&  <CardDetails id={id} title={title} description={description} address={address} city={city} country={country} price={price} size={size} url={url} available={available}/> }
+                    { isToggle &&  <CardDetails {...this.props}/> }
                     <button onClick={this.toggleButton}>{ isToggle ? <b>{`Less details`}</b>: <b>{`More details`}</b>}</button>
                 </div>
             </>
