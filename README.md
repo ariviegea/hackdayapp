@@ -1,6 +1,6 @@
 # hackdayapp
 
-The first part of the project was a 16hour non stop coding as part of salt hackday build with react, express and inline-style. The project setup was client and server conected and a hamburger dependency installed. Apart from the features building during hack day included: 
+The first part of the project was a 16hour non stop coding as part of salt hackday build with react, express and inline-style. The basic project setup was a client (React) and server (express) conected and a hamburger dependency installed. Apart from the features building during hack day included: 
 
 - Landing page.
 - Apartments, filter apartments & change the state of the apartment if its book.
